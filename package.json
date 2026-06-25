@@ -11,13 +11,23 @@
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "format": "oxfmt",
-    "format:check": "oxfmt --check"
+    "format:check": "oxfmt --check",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio",
+    "prisma:push": "prisma db push"
+  },
+  "dependencies": {
+    "@prisma/adapter-mariadb": "^7.8.0",
+    "@prisma/client": "^7.8.0"
   },
   "devDependencies": {
     "@types/node": "latest",
+    "dotenv": "^17.4.2",
     "nitro": "latest",
     "oxfmt": "^0.56.0",
     "oxlint": "^1.71.0",
+    "prisma": "^7.8.0",
     "typescript": "latest"
   }
 }

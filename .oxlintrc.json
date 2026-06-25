@@ -16,5 +16,5 @@
     "node": true,
     "es2024": true
   },
-  "ignorePatterns": ["dist", "node_modules", ".output", ".nitro"]
+  "ignorePatterns": ["dist", "node_modules", ".output", ".nitro", "generated"]
 }
