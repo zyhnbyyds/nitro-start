@@ -1,0 +1,138 @@
+[
+  {
+    "name": "GET / (基础)",
+    "url": "http://localhost:3000/",
+    "duration": 10.03,
+    "errors": 0,
+    "timeouts": 0,
+    "requests": {
+      "total": 23829,
+      "average": 2383.4,
+      "mean": 2383.4,
+      "stddev": 219.97,
+      "min": 2108,
+      "max": 2743,
+      "p99": 2743,
+      "p99_9": 2743
+    },
+    "latency": {
+      "average": 3.7,
+      "mean": 3.7,
+      "stddev": 1.33,
+      "min": 1,
+      "max": 29,
+      "p99": 8,
+      "p99_9": 11
+    },
+    "throughput": {
+      "average": 440857.6,
+      "mean": 440857.6,
+      "stddev": 40766.78,
+      "min": 389980,
+      "max": 507455,
+      "total": 4408365
+    }
+  },
+  {
+    "name": "GET / (高并发)",
+    "url": "http://localhost:3000/",
+    "duration": 10.05,
+    "errors": 0,
+    "timeouts": 0,
+    "requests": {
+      "total": 28624,
+      "average": 2863.2,
+      "mean": 2863.2,
+      "stddev": 80.58,
+      "min": 2707,
+      "max": 2944,
+      "p99": 2945,
+      "p99_9": 2945
+    },
+    "latency": {
+      "average": 34.51,
+      "mean": 34.51,
+      "stddev": 5.53,
+      "min": 23,
+      "max": 95,
+      "p99": 54,
+      "p99_9": 91
+    },
+    "throughput": {
+      "average": 529536,
+      "mean": 529536,
+      "stddev": 14870.5,
+      "min": 500795,
+      "max": 544640,
+      "total": 5295440
+    }
+  },
+  {
+    "name": "GET /api (基础)",
+    "url": "http://localhost:3000/api",
+    "duration": 10.02,
+    "errors": 0,
+    "timeouts": 0,
+    "requests": {
+      "total": 20343,
+      "average": 2034.6,
+      "mean": 2034.6,
+      "stddev": 106.94,
+      "min": 1843,
+      "max": 2150,
+      "p99": 2151,
+      "p99_9": 2151
+    },
+    "latency": {
+      "average": 4.41,
+      "mean": 4.41,
+      "stddev": 1.21,
+      "min": 1,
+      "max": 13,
+      "p99": 9,
+      "p99_9": 11
+    },
+    "throughput": {
+      "average": 374323.2,
+      "mean": 374323.2,
+      "stddev": 19630.06,
+      "min": 339112,
+      "max": 395600,
+      "total": 3743112
+    }
+  },
+  {
+    "name": "GET /api (高并发)",
+    "url": "http://localhost:3000/api",
+    "duration": 10.03,
+    "errors": 0,
+    "timeouts": 0,
+    "requests": {
+      "total": 18217,
+      "average": 1821.7,
+      "mean": 1821.7,
+      "stddev": 125.75,
+      "min": 1639,
+      "max": 2044,
+      "p99": 2044,
+      "p99_9": 2044
+    },
+    "latency": {
+      "average": 26.95,
+      "mean": 26.95,
+      "stddev": 5.19,
+      "min": 13,
+      "max": 70,
+      "p99": 45,
+      "p99_9": 60
+    },
+    "throughput": {
+      "average": 335180.8,
+      "mean": 335180.8,
+      "stddev": 23143.54,
+      "min": 301576,
+      "max": 376096,
+      "total": 3351928
+    }
+  }
+]

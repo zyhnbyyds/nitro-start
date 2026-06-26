@@ -15,14 +15,17 @@
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:studio": "prisma studio",
-    "prisma:push": "prisma db push"
+    "prisma:push": "prisma db push",
+    "bench": "bun run bench/autocannon.ts"
   },
   "dependencies": {
     "@prisma/adapter-mariadb": "^7.8.0",
     "@prisma/client": "^7.8.0"
   },
   "devDependencies": {
+    "@types/autocannon": "^7.12.7",
     "@types/node": "latest",
+    "autocannon": "^8.0.0",
     "dotenv": "^17.4.2",
     "elysia": "^1.4.29",
     "nitro": "latest",

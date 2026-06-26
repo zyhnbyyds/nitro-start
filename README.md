@@ -125,6 +125,28 @@ nitro-start/
 | `bun run prisma:migrate`  | 执行数据库迁移（开发环境）    |
 | `bun run prisma:studio`   | 打开 Prisma Studio 可视化管理 |
 | `bun run prisma:push`     | 直接推送 schema 到数据库      |
+| `bun run bench`           | 运行 Autocannon 性能压测      |
+
+## 性能压测
+
+项目内置 [Autocannon](https://github.com/mcollina/autocannon) 压测脚本，覆盖 `/` 和 `/api` 在不同并发下的表现。
+
+```bash
+# 1. 先启动开发服务器
+bun dev
+
+# 2. 另一个终端运行压测
+bun run bench
+```
+
+测试场景：
+
+- `GET /` 基础吞吐量（10 连接 / 10s）
+- `GET /` 高并发（100 连接 / 10s）
+- `GET /api` 基础吞吐量（10 连接 / 10s，含 DB 查询）
+- `GET /api` 高并发（50 连接 / 10s，含 DB 查询）
+
+测试完成后会在项目根目录生成 `bench-report.json` 详细报告。自定义场景可编辑 `bench/autocannon.ts`。
 
 ## API 端点
 
