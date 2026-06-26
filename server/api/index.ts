@@ -1,10 +1,12 @@
 import { defineHandler } from "nitro";
-import { prisma } from "../utils/prisma";
+import { count } from "drizzle-orm";
+import { db } from "../utils/db";
+import { users } from "../db/schema";
 
 export default defineHandler(async (_event) => {
-  const userCount = await prisma.user.count();
+  const [result] = await db.select({ count: count() }).from(users);
 
   return {
-    userCount,
+    userCount: result.count,
   };
 });

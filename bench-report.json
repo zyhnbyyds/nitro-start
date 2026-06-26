@@ -6,31 +6,31 @@
     "errors": 0,
     "timeouts": 0,
     "requests": {
-      "total": 23829,
-      "average": 2383.4,
-      "mean": 2383.4,
-      "stddev": 219.97,
-      "min": 2108,
-      "max": 2743,
-      "p99": 2743,
-      "p99_9": 2743
+      "total": 22865,
+      "average": 2287,
+      "mean": 2287,
+      "stddev": 190.55,
+      "min": 1984,
+      "max": 2486,
+      "p99": 2487,
+      "p99_9": 2487
     },
     "latency": {
-      "average": 3.7,
-      "mean": 3.7,
-      "stddev": 1.33,
+      "average": 3.88,
+      "mean": 3.88,
+      "stddev": 1.47,
       "min": 1,
-      "max": 29,
-      "p99": 8,
-      "p99_9": 11
+      "max": 32,
+      "p99": 9,
+      "p99_9": 15
     },
     "throughput": {
-      "average": 440857.6,
-      "mean": 440857.6,
-      "stddev": 40766.78,
-      "min": 389980,
-      "max": 507455,
-      "total": 4408365
+      "average": 423040,
+      "mean": 423040,
+      "stddev": 35229.55,
+      "min": 367040,
+      "max": 459910,
+      "total": 4230025
     }
   },
   {
@@ -40,31 +40,31 @@
     "errors": 0,
     "timeouts": 0,
     "requests": {
-      "total": 28624,
-      "average": 2863.2,
-      "mean": 2863.2,
-      "stddev": 80.58,
-      "min": 2707,
-      "max": 2944,
-      "p99": 2945,
-      "p99_9": 2945
+      "total": 24030,
+      "average": 2403.4,
+      "mean": 2403.4,
+      "stddev": 212.63,
+      "min": 2121,
+      "max": 2801,
+      "p99": 2801,
+      "p99_9": 2801
     },
     "latency": {
-      "average": 34.51,
-      "mean": 34.51,
-      "stddev": 5.53,
-      "min": 23,
-      "max": 95,
-      "p99": 54,
-      "p99_9": 91
+      "average": 41.16,
+      "mean": 41.16,
+      "stddev": 8.55,
+      "min": 25,
+      "max": 113,
+      "p99": 66,
+      "p99_9": 108
     },
     "throughput": {
-      "average": 529536,
-      "mean": 529536,
-      "stddev": 14870.5,
-      "min": 500795,
-      "max": 544640,
-      "total": 5295440
+      "average": 444544,
+      "mean": 444544,
+      "stddev": 39384.42,
+      "min": 392385,
+      "max": 518185,
+      "total": 4445550
     }
   },
   {
@@ -74,31 +74,31 @@
     "errors": 0,
     "timeouts": 0,
     "requests": {
-      "total": 20343,
-      "average": 2034.6,
-      "mean": 2034.6,
-      "stddev": 106.94,
-      "min": 1843,
-      "max": 2150,
-      "p99": 2151,
-      "p99_9": 2151
+      "total": 24464,
+      "average": 2447,
+      "mean": 2447,
+      "stddev": 148.7,
+      "min": 2161,
+      "max": 2612,
+      "p99": 2613,
+      "p99_9": 2613
     },
     "latency": {
-      "average": 4.41,
-      "mean": 4.41,
+      "average": 3.59,
+      "mean": 3.59,
       "stddev": 1.21,
       "min": 1,
-      "max": 13,
-      "p99": 9,
+      "max": 20,
+      "p99": 8,
       "p99_9": 11
     },
     "throughput": {
-      "average": 374323.2,
-      "mean": 374323.2,
-      "stddev": 19630.06,
-      "min": 339112,
-      "max": 395600,
-      "total": 3743112
+      "average": 450150.4,
+      "mean": 450150.4,
+      "stddev": 27298.65,
+      "min": 397624,
+      "max": 480608,
+      "total": 4501376
     }
   },
   {
@@ -108,31 +108,31 @@
     "errors": 0,
     "timeouts": 0,
     "requests": {
-      "total": 18217,
-      "average": 1821.7,
-      "mean": 1821.7,
-      "stddev": 125.75,
-      "min": 1639,
-      "max": 2044,
-      "p99": 2044,
-      "p99_9": 2044
+      "total": 25253,
+      "average": 2525.6,
+      "mean": 2525.6,
+      "stddev": 103.31,
+      "min": 2311,
+      "max": 2669,
+      "p99": 2669,
+      "p99_9": 2669
     },
     "latency": {
-      "average": 26.95,
-      "mean": 26.95,
-      "stddev": 5.19,
-      "min": 13,
-      "max": 70,
-      "p99": 45,
-      "p99_9": 60
+      "average": 19.3,
+      "mean": 19.3,
+      "stddev": 3.33,
+      "min": 11,
+      "max": 53,
+      "p99": 28,
+      "p99_9": 44
     },
     "throughput": {
-      "average": 335180.8,
-      "mean": 335180.8,
-      "stddev": 23143.54,
-      "min": 301576,
-      "max": 376096,
-      "total": 3351928
+      "average": 464665.6,
+      "mean": 464665.6,
+      "stddev": 18961.71,
+      "min": 425224,
+      "max": 491096,
+      "total": 4646552
     }
   }
 ]
