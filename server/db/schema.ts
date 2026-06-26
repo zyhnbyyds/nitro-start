@@ -10,9 +10,9 @@ export const users = mysqlTable("users", {
   name: varchar("name", { length: 191 }),
   createdAt: datetime("created_at", { mode: "date" })
     .notNull()
-    .default(sql`CURRENT_TIMESTAMP(3)`),
+    .default(sql`CURRENT_TIMESTAMP`),
   updatedAt: datetime("updated_at", { mode: "date" })
     .notNull()
-    .default(sql`CURRENT_TIMESTAMP(3)`)
+    .default(sql`CURRENT_TIMESTAMP`)
     .$onUpdate(() => new Date()),
 });
