@@ -6,133 +6,133 @@
     "errors": 0,
     "timeouts": 0,
     "requests": {
-      "total": 22865,
-      "average": 2287,
-      "mean": 2287,
-      "stddev": 190.55,
-      "min": 1984,
-      "max": 2486,
-      "p99": 2487,
-      "p99_9": 2487
+      "total": 70647,
+      "average": 7065.2,
+      "mean": 7065.2,
+      "stddev": 364.41,
+      "min": 6084,
+      "max": 7512,
+      "p99": 7515,
+      "p99_9": 7515
     },
     "latency": {
-      "average": 3.88,
-      "mean": 3.88,
-      "stddev": 1.47,
+      "average": 0.98,
+      "mean": 0.98,
+      "stddev": 0.76,
       "min": 1,
-      "max": 32,
-      "p99": 9,
-      "p99_9": 15
+      "max": 33,
+      "p99": 3,
+      "p99_9": 5
     },
     "throughput": {
-      "average": 423040,
-      "mean": 423040,
-      "stddev": 35229.55,
-      "min": 367040,
-      "max": 459910,
-      "total": 4230025
+      "average": 1307033.61,
+      "mean": 1307033.61,
+      "stddev": 67410.71,
+      "min": 1125540,
+      "max": 1389720,
+      "total": 13069695
     }
   },
   {
     "name": "GET / (高并发)",
     "url": "http://localhost:3000/",
-    "duration": 10.05,
+    "duration": 10.04,
     "errors": 0,
     "timeouts": 0,
     "requests": {
-      "total": 24030,
-      "average": 2403.4,
-      "mean": 2403.4,
-      "stddev": 212.63,
-      "min": 2121,
-      "max": 2801,
-      "p99": 2801,
-      "p99_9": 2801
+      "total": 70661,
+      "average": 7066.8,
+      "mean": 7066.8,
+      "stddev": 191.87,
+      "min": 6516,
+      "max": 7238,
+      "p99": 7239,
+      "p99_9": 7239
     },
     "latency": {
-      "average": 41.16,
-      "mean": 41.16,
-      "stddev": 8.55,
-      "min": 25,
-      "max": 113,
-      "p99": 66,
-      "p99_9": 108
+      "average": 13.66,
+      "mean": 13.66,
+      "stddev": 2.07,
+      "min": 1,
+      "max": 54,
+      "p99": 17,
+      "p99_9": 50
     },
     "throughput": {
-      "average": 444544,
-      "mean": 444544,
-      "stddev": 39384.42,
-      "min": 392385,
-      "max": 518185,
-      "total": 4445550
+      "average": 1307238.4,
+      "mean": 1307238.4,
+      "stddev": 35479.65,
+      "min": 1205460,
+      "max": 1339030,
+      "total": 13072285
     }
   },
   {
     "name": "GET /api (基础)",
     "url": "http://localhost:3000/api",
-    "duration": 10.02,
+    "duration": 10.04,
     "errors": 0,
     "timeouts": 0,
     "requests": {
-      "total": 24464,
-      "average": 2447,
-      "mean": 2447,
-      "stddev": 148.7,
-      "min": 2161,
-      "max": 2612,
-      "p99": 2613,
-      "p99_9": 2613
+      "total": 6478,
+      "average": 647.8,
+      "mean": 647.8,
+      "stddev": 63.38,
+      "min": 461,
+      "max": 680,
+      "p99": 680,
+      "p99_9": 680
     },
     "latency": {
-      "average": 3.59,
-      "mean": 3.59,
-      "stddev": 1.21,
-      "min": 1,
-      "max": 20,
-      "p99": 8,
-      "p99_9": 11
+      "average": 14.95,
+      "mean": 14.95,
+      "stddev": 5.26,
+      "min": 9,
+      "max": 121,
+      "p99": 27,
+      "p99_9": 118
     },
     "throughput": {
-      "average": 450150.4,
-      "mean": 450150.4,
-      "stddev": 27298.65,
-      "min": 397624,
-      "max": 480608,
-      "total": 4501376
+      "average": 159363.21,
+      "mean": 159363.21,
+      "stddev": 15602.93,
+      "min": 113406,
+      "max": 167280,
+      "total": 1593588
     }
   },
   {
     "name": "GET /api (高并发)",
     "url": "http://localhost:3000/api",
-    "duration": 10.03,
+    "duration": 10.04,
     "errors": 0,
     "timeouts": 0,
     "requests": {
-      "total": 25253,
-      "average": 2525.6,
-      "mean": 2525.6,
-      "stddev": 103.31,
-      "min": 2311,
-      "max": 2669,
-      "p99": 2669,
-      "p99_9": 2669
+      "total": 7306,
+      "average": 730.6,
+      "mean": 730.6,
+      "stddev": 30.71,
+      "min": 651,
+      "max": 771,
+      "p99": 771,
+      "p99_9": 771
     },
     "latency": {
-      "average": 19.3,
-      "mean": 19.3,
-      "stddev": 3.33,
-      "min": 11,
-      "max": 53,
-      "p99": 28,
-      "p99_9": 44
+      "average": 67.82,
+      "mean": 67.82,
+      "stddev": 7.42,
+      "min": 48,
+      "max": 122,
+      "p99": 91,
+      "p99_9": 115
     },
     "throughput": {
-      "average": 464665.6,
-      "mean": 464665.6,
-      "stddev": 18961.71,
-      "min": 425224,
-      "max": 491096,
-      "total": 4646552
+      "average": 179750.4,
+      "mean": 179750.4,
+      "stddev": 7543.28,
+      "min": 160146,
+      "max": 189666,
+      "total": 1797276
     }
   }
 ]
