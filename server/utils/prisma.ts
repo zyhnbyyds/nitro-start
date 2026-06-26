@@ -5,7 +5,7 @@ const adapter = new PrismaMariaDb({
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "password",
+  password: "123456",
   database: "nitro_starter",
   connectionLimit: 5,
 });
