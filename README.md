@@ -1,6 +1,6 @@
 # Nitro Starter
 
-基于 [Nitro v3](https://nitro.build) + [Elysia](https://elysiajs.com) + [Prisma](https://prisma.io) 的现代全栈 API 启动模板，开箱即用的类型安全与热更新体验。
+基于 [Nitro v3](https://nitro.build) + [Elysia](https://elysiajs.com) + [Drizzle ORM](https://orm.drizzle.team) 的现代全栈 API 启动模板，开箱即用的类型安全与热更新体验。
 
 ## 技术栈
 
@@ -8,7 +8,8 @@
 | ---------- | -------------------------------------------- |
 | 服务端框架 | [Nitro v3](https://nitro.build)              |
 | HTTP 框架  | [Elysia](https://elysiajs.com)               |
-| ORM        | [Prisma v7](https://prisma.io)               |
+| ORM        | [Drizzle ORM](https://orm.drizzle.team)      |
+| 数据库驱动 | [mysql2](https://github.com/sidorares/node-mysql2) |
 | 数据库     | MySQL / MariaDB                              |
 | 打包器     | [Rolldown](https://rolldown.rs)              |
 | 类型检查   | [TypeScript](https://www.typescriptlang.org) |
@@ -45,27 +46,19 @@ DB_NAME=nitro_starter
 
 ### 3. 初始化数据库
 
-确保 MySQL 服务已启动，然后执行 Prisma 迁移：
+确保 MySQL 服务已启动，然后执行迁移：
 
 ```bash
 # 创建数据库（如果尚未创建）
 mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS nitro_starter CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
 
-# 执行迁移（自动建表）
-bun run prisma:migrate
+# 同步数据库结构（Drizzle Push）
+bun run db:push
 ```
 
-> **说明**：`prisma:migrate` 会执行 `prisma migrate dev`，根据 `prisma/schema.prisma` 和 `prisma/migrations/` 自动同步数据库结构。
+> **说明**：`db:push` 会根据 `server/db/schema.ts` 自动同步数据库表结构。如需生成迁移文件，使用 `bun run db:generate` + `bun run db:migrate`。
 
-### 4. 生成 Prisma Client
-
-```bash
-bun run prisma:generate
-```
-
-此命令会根据 `prisma/schema.prisma` 生成类型安全的数据库客户端到 `generated/prisma/`。
-
-### 5. 启动开发服务器
+### 4. 启动开发服务器
 
 ```bash
 bun dev
@@ -73,7 +66,7 @@ bun dev
 
 开发服务器默认运行在 `http://localhost:3000`，支持热更新（HMR）。
 
-### 6. 验证 API
+### 5. 验证 API
 
 ```bash
 # 测试默认路由
@@ -90,21 +83,20 @@ nitro-start/
 ├── server/                  # 服务端代码
 │   ├── api/                 # /api 前缀的路由处理
 │   │   └── index.ts         # GET /api
+│   ├── db/                  # 数据库相关
+│   │   └── schema.ts        # Drizzle 数据模型定义
 │   ├── routes/              # 无前缀的路由处理（按需创建）
 │   ├── middleware/           # 中间件（按需创建）
 │   ├── plugins/             # 插件（按需创建）
 │   ├── utils/               # 工具函数
-│   │   └── prisma.ts        # Prisma 客户端实例
+│   │   └── db.ts            # Drizzle 数据库连接实例
 │   └── assets/              # 服务端资源（按需创建）
 ├── public/                  # 静态资源（直接拷贝，不打包）
 │   └── styles.css
-├── prisma/                  # Prisma 相关
-│   ├── schema.prisma        # 数据模型定义
-│   └── migrations/          # 数据库迁移文件
-├── generated/               # 自动生成的文件
-│   └── prisma/              # Prisma Client 生成产物
+├── bench/                   # 性能压测
+│   └── autocannon.ts        # Autocannon 压测脚本
 ├── nitro.config.ts          # Nitro 配置
-├── prisma.config.ts         # Prisma 配置
+├── drizzle.config.ts        # Drizzle Kit 配置
 ├── server.ts                # Elysia 服务入口
 ├── tsconfig.json            # TypeScript 配置
 └── package.json
@@ -121,10 +113,10 @@ nitro-start/
 | `bun run lint:fix`        | 代码检查并自动修复            |
 | `bun run format`          | 代码格式化                    |
 | `bun run format:check`    | 检查代码格式（不修改）        |
-| `bun run prisma:generate` | 生成 Prisma Client            |
-| `bun run prisma:migrate`  | 执行数据库迁移（开发环境）    |
-| `bun run prisma:studio`   | 打开 Prisma Studio 可视化管理 |
-| `bun run prisma:push`     | 直接推送 schema 到数据库      |
+| `bun run db:generate`     | 生成数据库迁移文件            |
+| `bun run db:migrate`      | 执行数据库迁移                |
+| `bun run db:push`         | 直接推送 schema 到数据库      |
+| `bun run db:studio`       | 打开 Drizzle Studio 可视化管理|
 | `bun run bench`           | 运行 Autocannon 性能压测      |
 
 ## 性能压测
@@ -173,5 +165,5 @@ bun run build
 
 - [Nitro 文档](https://nitro.build)
 - [Elysia 文档](https://elysiajs.com)
-- [Prisma 文档](https://prisma.io/docs)
+- [Drizzle ORM 文档](https://orm.drizzle.team)
 - [h3 文档](https://h3.dev)
