@@ -4,17 +4,17 @@
 
 ## 技术栈
 
-| 类别       | 技术                                         |
-| ---------- | -------------------------------------------- |
-| 服务端框架 | [Nitro v3](https://nitro.build)              |
-| HTTP 框架  | [Elysia](https://elysiajs.com)               |
-| ORM        | [Drizzle ORM](https://orm.drizzle.team)      |
+| 类别       | 技术                                               |
+| ---------- | -------------------------------------------------- |
+| 服务端框架 | [Nitro v3](https://nitro.build)                    |
+| HTTP 框架  | [Elysia](https://elysiajs.com)                     |
+| ORM        | [Drizzle ORM](https://orm.drizzle.team)            |
 | 数据库驱动 | [mysql2](https://github.com/sidorares/node-mysql2) |
-| 数据库     | MySQL / MariaDB                              |
-| 打包器     | [Rolldown](https://rolldown.rs)              |
-| 类型检查   | [TypeScript](https://www.typescriptlang.org) |
-| 代码检查   | [oxlint](https://oxc.rs)                     |
-| 代码格式化 | [oxfmt](https://oxc.rs)                      |
+| 数据库     | MySQL / MariaDB                                    |
+| 打包器     | [Rolldown](https://rolldown.rs)                    |
+| 类型检查   | [TypeScript](https://www.typescriptlang.org)       |
+| 代码检查   | [oxlint](https://oxc.rs)                           |
+| 代码格式化 | [oxfmt](https://oxc.rs)                            |
 
 ## 环境要求
 
@@ -104,20 +104,20 @@ nitro-start/
 
 ## 可用命令
 
-| 命令                      | 说明                          |
-| ------------------------- | ----------------------------- |
-| `bun dev`                 | 启动开发服务器（热更新）      |
-| `bun run build`           | 构建生产版本                  |
-| `bun run preview`         | 本地预览生产构建              |
-| `bun lint`                | 代码检查                      |
-| `bun run lint:fix`        | 代码检查并自动修复            |
-| `bun run format`          | 代码格式化                    |
-| `bun run format:check`    | 检查代码格式（不修改）        |
-| `bun run db:generate`     | 生成数据库迁移文件            |
-| `bun run db:migrate`      | 执行数据库迁移                |
-| `bun run db:push`         | 直接推送 schema 到数据库      |
-| `bun run db:studio`       | 打开 Drizzle Studio 可视化管理|
-| `bun run bench`           | 运行 Autocannon 性能压测      |
+| 命令                   | 说明                           |
+| ---------------------- | ------------------------------ |
+| `bun dev`              | 启动开发服务器（热更新）       |
+| `bun run build`        | 构建生产版本                   |
+| `bun run preview`      | 本地预览生产构建               |
+| `bun lint`             | 代码检查                       |
+| `bun run lint:fix`     | 代码检查并自动修复             |
+| `bun run format`       | 代码格式化                     |
+| `bun run format:check` | 检查代码格式（不修改）         |
+| `bun run db:generate`  | 生成数据库迁移文件             |
+| `bun run db:migrate`   | 执行数据库迁移                 |
+| `bun run db:push`      | 直接推送 schema 到数据库       |
+| `bun run db:studio`    | 打开 Drizzle Studio 可视化管理 |
+| `bun run bench`        | 运行 Autocannon 性能压测       |
 
 ## 性能压测
 
