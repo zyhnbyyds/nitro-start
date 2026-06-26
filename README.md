@@ -1,18 +1,155 @@
-# Nitro starter
+# Nitro Starter
 
-Create your API and deploy it anywhere with this Nitro starter.
+基于 [Nitro v3](https://nitro.build) + [Elysia](https://elysiajs.com) + [Prisma](https://prisma.io) 的现代全栈 API 启动模板，开箱即用的类型安全与热更新体验。
 
-## Getting started
+## 技术栈
+
+| 类别       | 技术                                         |
+| ---------- | -------------------------------------------- |
+| 服务端框架 | [Nitro v3](https://nitro.build)              |
+| HTTP 框架  | [Elysia](https://elysiajs.com)               |
+| ORM        | [Prisma v7](https://prisma.io)               |
+| 数据库     | MySQL / MariaDB                              |
+| 打包器     | [Rolldown](https://rolldown.rs)              |
+| 类型检查   | [TypeScript](https://www.typescriptlang.org) |
+| 代码检查   | [oxlint](https://oxc.rs)                     |
+| 代码格式化 | [oxfmt](https://oxc.rs)                      |
+
+## 环境要求
+
+- **[Bun](https://bun.sh)** >= 1.2（运行时 & 包管理器）
+- **MySQL** >= 8.0（或 MariaDB >= 10.5）
+
+## 初始化流程
+
+### 1. 克隆项目并安装依赖
 
 ```bash
-npm install
-npm run dev
+git clone <your-repo-url> nitro-starter
+cd nitro-starter
+bun install
 ```
 
-## Deploying
+### 2. 配置环境变量
+
+创建 `.env` 文件（可参考下方模板），填入你的数据库连接信息：
+
+```env
+# 数据库连接
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=your_password
+DB_NAME=nitro_starter
+```
+
+### 3. 初始化数据库
+
+确保 MySQL 服务已启动，然后执行 Prisma 迁移：
 
 ```bash
-npm run build
+# 创建数据库（如果尚未创建）
+mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS nitro_starter CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+
+# 执行迁移（自动建表）
+bun run prisma:migrate
 ```
 
-Then checkout the [Nitro documentation](https://nitro.build/deploy) to learn more about the different deployment presets.
+> **说明**：`prisma:migrate` 会执行 `prisma migrate dev`，根据 `prisma/schema.prisma` 和 `prisma/migrations/` 自动同步数据库结构。
+
+### 4. 生成 Prisma Client
+
+```bash
+bun run prisma:generate
+```
+
+此命令会根据 `prisma/schema.prisma` 生成类型安全的数据库客户端到 `generated/prisma/`。
+
+### 5. 启动开发服务器
+
+```bash
+bun dev
+```
+
+开发服务器默认运行在 `http://localhost:3000`，支持热更新（HMR）。
+
+### 6. 验证 API
+
+```bash
+# 测试默认路由
+curl http://localhost:3000
+
+# 测试 API 端点（返回用户数量）
+curl http://localhost:3000/api
+```
+
+## 项目结构
+
+```
+nitro-start/
+├── server/                  # 服务端代码
+│   ├── api/                 # /api 前缀的路由处理
+│   │   └── index.ts         # GET /api
+│   ├── routes/              # 无前缀的路由处理（按需创建）
+│   ├── middleware/           # 中间件（按需创建）
+│   ├── plugins/             # 插件（按需创建）
+│   ├── utils/               # 工具函数
+│   │   └── prisma.ts        # Prisma 客户端实例
+│   └── assets/              # 服务端资源（按需创建）
+├── public/                  # 静态资源（直接拷贝，不打包）
+│   └── styles.css
+├── prisma/                  # Prisma 相关
+│   ├── schema.prisma        # 数据模型定义
+│   └── migrations/          # 数据库迁移文件
+├── generated/               # 自动生成的文件
+│   └── prisma/              # Prisma Client 生成产物
+├── nitro.config.ts          # Nitro 配置
+├── prisma.config.ts         # Prisma 配置
+├── server.ts                # Elysia 服务入口
+├── tsconfig.json            # TypeScript 配置
+└── package.json
+```
+
+## 可用命令
+
+| 命令                      | 说明                          |
+| ------------------------- | ----------------------------- |
+| `bun dev`                 | 启动开发服务器（热更新）      |
+| `bun run build`           | 构建生产版本                  |
+| `bun run preview`         | 本地预览生产构建              |
+| `bun lint`                | 代码检查                      |
+| `bun run lint:fix`        | 代码检查并自动修复            |
+| `bun run format`          | 代码格式化                    |
+| `bun run format:check`    | 检查代码格式（不修改）        |
+| `bun run prisma:generate` | 生成 Prisma Client            |
+| `bun run prisma:migrate`  | 执行数据库迁移（开发环境）    |
+| `bun run prisma:studio`   | 打开 Prisma Studio 可视化管理 |
+| `bun run prisma:push`     | 直接推送 schema 到数据库      |
+
+## API 端点
+
+| 方法 | 路径   | 说明             |
+| ---- | ------ | ---------------- |
+| GET  | `/`    | Elysia 欢迎信息  |
+| GET  | `/api` | 返回用户总数统计 |
+
+> 基于文件系统路由：`server/api/` 下的文件自动映射为 `/api/*`，`server/routes/` 下的文件映射为 `/*`。
+
+## 部署
+
+```bash
+# 构建生产版本
+bun run build
+
+# 输出目录：.output/
+# 可部署到任意 Node.js 服务器或 Serverless 平台
+```
+
+支持的部署预设参见 [Nitro Deployment](https://nitro.build/deploy)，包括 Vercel、Netlify、Cloudflare Workers、Node.js Server 等。
+
+## 更多资源
+
+- [Nitro 文档](https://nitro.build)
+- [Elysia 文档](https://elysiajs.com)
+- [Prisma 文档](https://prisma.io/docs)
+- [h3 文档](https://h3.dev)
