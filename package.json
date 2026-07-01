@@ -13,25 +13,25 @@
     "format": "oxfmt",
     "format:check": "oxfmt --check",
     "db:generate": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate",
+    "db:migrate": "bun run server/db/migrate.ts",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "bench": "bun run bench/autocannon.ts"
   },
   "dependencies": {
-    "drizzle-orm": "^0.44.0",
-    "mysql2": "^3.14.0"
+    "drizzle-orm": "1.0.0-rc.3",
+    "mysql2": "3.14.1"
   },
   "devDependencies": {
     "@types/autocannon": "^7.12.7",
-    "@types/node": "latest",
+    "@types/node": "^26.0.1",
     "autocannon": "^8.0.0",
     "dotenv": "^17.4.2",
-    "drizzle-kit": "^0.31.0",
+    "drizzle-kit": "1.0.0-rc.3",
     "elysia": "^1.4.29",
-    "nitro": "latest",
-    "oxfmt": "^0.56.0",
-    "oxlint": "^1.71.0",
-    "typescript": "latest"
+    "nitro": "^3.0.260610-beta",
+    "oxfmt": "^0.57.0",
+    "oxlint": "^1.72.0",
+    "typescript": "^6.0.3"
   }
 }
